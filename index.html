@@ -3,20 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Website</title>
+    <title>Custom Webpage</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        h1 {
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #text-body {
+            max-width: 800px; /* Adjust the maximum width as needed */
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        nav a:hover {
+            background-color: #297fb8;
+        }
+
+        #options-menu {
+            flex: 1;
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        #options-menu h2 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        a:hover {
             color: #3498db;
         }
     </style>
 </head>
 <body>
-    <h1>Welcome!</h1>
-    <p>Under Construction. Visit again soon. </p>
+
+    <header>
+        <nav>
+            <a href="#">CV</a>
+            <a href="#">Projects</a>
+            <a href="#">Readings and reviews</a>
+            <a href="#">Writings</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- <aside id="options-menu">
+            <h2>Options Menu</h2>
+            <ul>
+                <li><a href="#">Option 1</a></li>
+                <li><a href="#">Option 2</a></li>
+                <li><a href="#">Option 3</a></li>
+                <li><a href="#">Option 4</a></li>
+            </ul>
+        </aside> -->
+        
+        <section id="text-body">
+            <p>This is the main content of your webpage.</p>
+        </section>
+    </main>
+
+    <script>
+        // You can add JavaScript functionality here if needed.
+        // For now, it's an empty script block.
+    </script>
 </body>
 </html>
