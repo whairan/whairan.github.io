@@ -1,1 +1,304 @@
-<li><a href="assets/the-efficiency-trap.pdf" target="_blank">The Efficiency Trap</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wali Hairan | Builder</title>
+  <meta name="description" content="Portfolio and notes of Wali Hairan. Static site that feels dynamic. Built for GitHub Pages." />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1220;/* dark slate */
+      --surface: #0f172a;
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --accent: #60a5fa;
+      --card: #111827;
+      --ring: rgba(96,165,250,.5);
+    }
+    [data-theme="light"]{
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --muted: #475569;
+      --text: #0f172a;
+      --accent: #2563eb;
+      --card: #f1f5f9;
+      --ring: rgba(37,99,235,.3);
+    }
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 80% -10%, rgba(96,165,250,.07), transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{
+      position:sticky;top:0;backdrop-filter:saturate(1.2) blur(10px);
+      background: color-mix(in srgb, var(--bg) 70%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+      z-index: 50;
+    }
+    .nav-inner{display:flex;align-items:center;gap:16px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 20px var(--accent)}
+    .tabs{display:flex;gap:10px;flex-wrap:wrap}
+    .tab{padding:8px 12px;border-radius:12px;color:var(--text);border:1px solid transparent;cursor:pointer}
+    .tab[aria-current="page"], .tab:hover{background:var(--card);border-color:color-mix(in srgb, var(--accent) 40%, transparent)}
+    .actions{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:var(--accent);color:white;border:0;cursor:pointer;font-weight:600}
+    .ghost{background:transparent;color:var(--text);border:1px solid color-mix(in srgb, var(--text) 14%, transparent)}
+    .grid{display:grid;gap:16px}
+    @media(min-width:900px){.grid{grid-template-columns:2fr 1fr}}
+    .card{background:var(--surface);border:1px solid color-mix(in srgb, var(--text) 12%, transparent);border-radius:16px;padding:18px}
+    .card h3{margin:.2rem 0 0.6rem 0}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid color-mix(in srgb, var(--text) 14%, transparent);border-radius:999px;font-size:12px;color:var(--muted)}
+    .hero{padding:38px 0 18px 0}
+    .hero h1{font-size:clamp(28px,3vw,44px);line-height:1.1;margin:0}
+    .hero p{color:var(--muted);margin:.6rem 0 0}
+    .search{position:relative}
+    .search input{width:100%;padding:12px 40px 12px 14px;border-radius:12px;border:1px solid color-mix(in srgb, var(--text) 14%, transparent);background:var(--surface);color:var(--text)}
+    .search svg{position:absolute;right:10px;top:50%;transform:translateY(-50%)}
+    .list{display:grid;gap:12px}
+    .item{padding:14px;border:1px solid color-mix(in srgb, var(--text) 12%, transparent);background:var(--card);border-radius:14px}
+    .item h4{margin:.2rem 0}
+    .muted{color:var(--muted)}
+    .footer{margin:40px 0 80px 0;color:var(--muted);font-size:14px}
+    .kbd{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-size:12px; background:var(--card); padding:2px 6px; border-radius:6px; border:1px solid color-mix(in srgb, var(--text) 14%, transparent)}
+    .ring:focus{outline: none; box-shadow: 0 0 0 4px var(--ring)}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Wali Hairan",
+    "url": "https://whairan.github.io",
+    "sameAs": ["https://github.com/whairan","https://linkedin.com/in/whairan"],
+    "jobTitle": "Software Engineer",
+    "knowsAbout": ["Python","ML Ops","Data Engineering","APIs","CI/CD"]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand"><span class="dot" aria-hidden="true"></span><span>Wali Hairan</span></div>
+      <nav class="tabs" aria-label="Main">
+        <a class="tab ring" href="#home" aria-current="page">Home</a>
+        <a class="tab ring" href="#projects">Projects</a>
+        <a class="tab ring" href="#blog">Blog</a>
+        <a class="tab ring" href="#about">About</a>
+      </nav>
+      <div class="actions">
+        <button id="themeBtn" class="tab ring" aria-label="Toggle theme">Theme</button>
+        <a class="btn" href="https://github.com/whairan" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div class="grid">
+        <div class="card">
+          <span class="pill">Static site that feels dynamic</span>
+          <h1>Engineer and Builder</h1>
+          <p>
+            I design systems that turn days into minutes and ideas into results. This site is a single file on GitHub Pages with client logic that makes it feel lively.
+          </p>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn ghost" href="#blog">Read notes</a>
+          </div>
+        </div>
+        <aside class="card">
+          <h3>Latest from GitHub</h3>
+          <p class="muted">Auto pulled client side. No backend needed.</p>
+          <div id="repos" class="list" role="list"></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="card" id="quickActions" aria-labelledby="quickHeading">
+      <h3 id="quickHeading">Quick search</h3>
+      <div class="search" style="margin-top:8px">
+        <input id="q" class="ring" placeholder="Search projects and posts" aria-label="Search" />
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" /></svg>
+      </div>
+      <div id="results" class="list" style="margin-top:12px"></div>
+    </section>
+
+    <section class="card" id="projects" aria-labelledby="projHeading">
+      <h3 id="projHeading">Projects</h3>
+      <div id="projectList" class="list" style="margin-top:10px"></div>
+    </section>
+
+    <section class="card" id="blog" aria-labelledby="blogHeading">
+      <h3 id="blogHeading">Notes</h3>
+      <div id="postList" class="list" style="margin-top:10px"></div>
+    </section>
+
+    <section class="card" id="about" aria-labelledby="aboutHeading">
+      <h3 id="aboutHeading">About</h3>
+      <p>
+        Wali Hairan. Software engineer. Python, data engineering, CI and CD, ML ops. I enjoy building tools that make teams faster. I like teaching and writing.
+      </p>
+      <p>
+        Contact: <a href="mailto:waliodysseus@gmail.com">waliodysseus@gmail.com</a>
+      </p>
+      <form id="contact" action="https://formspree.io/f/your-id" method="POST" onsubmit="return confirm('Send message via Formspree')" style="margin-top:10px">
+        <div style="display:grid;gap:8px;grid-template-columns:1fr 1fr">
+          <input class="ring" type="text" name="name" placeholder="Name" required style="padding:10px;border-radius:10px;border:1px solid color-mix(in srgb, var(--text) 14%, transparent);background:var(--surface);color:var(--text)">
+          <input class="ring" type="email" name="email" placeholder="Email" required style="padding:10px;border-radius:10px;border:1px solid color-mix(in srgb, var(--text) 14%, transparent);background:var(--surface);color:var(--text)">
+        </div>
+        <textarea class="ring" name="message" placeholder="Message" required rows="4" style="margin-top:8px;padding:10px;width:100%;border-radius:12px;border:1px solid color-mix(in srgb, var(--text) 14%, transparent);background:var(--surface);color:var(--text)"></textarea>
+        <button class="btn" type="submit">Send</button>
+        <span class="muted" style="font-size:12px">Replace the Formspree endpoint with yours or switch to a mailto link.</span>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Wali Hairan</div>
+      <div>Built with plain HTML, CSS, and JS. Hosted on GitHub Pages.</div>
+      <div>Tip: press <span class="kbd">/</span> to focus search</div>
+    </footer>
+  </main>
+
+  <script>
+    // Config
+    const SITE = {
+      owner: "Wali Hairan",
+      githubUser: "whairan", // set to your GitHub user
+      projects: [
+        { title: "Whips", tags: ["pygame","game"], url: "https://github.com/whairan/whips", date: "2025-08-03", desc: "Adventure game with quests and a metaphorical tone." },
+        { title: "qMorph", tags: ["python","neuro"], url: "https://github.com/whairan/qMorph", date: "2024-01-20", desc: "Image registration and analytics automation." },
+        { title: "ATD", tags: ["ml","etl"], url: "https://github.com/whairan", date: "2023-11-11", desc: "Data tooling and automation experiments." },
+      ],
+      posts: [
+        { title: "Fast pipelines", slug: "fast-pipelines", date: "2025-07-31", tags: ["python","ci"], body: "I enjoy shrinking feedback loops. Measure. Remove friction. Automate tests and deploy with confidence." },
+        { title: "Teaching through WhatsApp", slug: "whatsapp-teaching", date: "2025-04-14", tags: ["edtech"], body: "Design for low bandwidth. Keep messages short. Use audio and simple tasks. Celebrate progress." },
+        { title: "Notes on ML ops", slug: "ml-ops-notes", date: "2025-02-01", tags: ["ml","ops"], body: "Track data and model versions. Keep pipelines simple. Prefer observability built in from day one." }
+      ]
+    };
+
+    // Theme
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    function setTheme(t){root.setAttribute('data-theme', t); localStorage.setItem('theme', t)}
+    setTheme(localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'))
+    themeBtn.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light'))
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Router
+    const tabs = document.querySelectorAll('.tabs .tab');
+    function updateRoute(){
+      const hash = location.hash || '#home';
+      tabs.forEach(t => t.setAttribute('aria-current', t.getAttribute('href') === hash ? 'page' : 'false'))
+      document.querySelectorAll('main > section').forEach(sec => sec.style.display = ("#"+sec.id)===hash || hash==="#home" && sec.id!="about" ? '' : (sec.id==='about' && hash==="#about" ? '' : 'none'))
+      if(hash.startsWith('#post/')) renderPost(hash.split('/')[1])
+      if(hash === '#home') window.scrollTo({top:0,behavior:'smooth'})
+    }
+    window.addEventListener('hashchange', updateRoute); updateRoute();
+
+    // Render helpers
+    function el(html){const t=document.createElement('template');t.innerHTML=html.trim();return t.content.firstChild}
+    function fmtDate(iso){try{return new Date(iso).toLocaleDateString(undefined,{year:'numeric',month:'short',day:'2-digit'})}catch{return iso}}
+
+    // Projects
+    function renderProjects(list){
+      const root = document.getElementById('projectList'); root.innerHTML='';
+      list.sort((a,b)=> new Date(b.date)-new Date(a.date)).forEach(p=>{
+        root.appendChild(el(`
+        <article class="item" role="listitem">
+          <div class="muted" style="font-size:12px">${fmtDate(p.date)}</div>
+          <h4><a href="${p.url}" target="_blank" rel="noreferrer">${p.title}</a></h4>
+          <div class="muted">${p.desc}</div>
+          <div style="display:flex;gap:6px;margin-top:6px">${p.tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div>
+        </article>`))
+      })
+    }
+
+    // Posts
+    function renderPosts(list){
+      const root = document.getElementById('postList'); root.innerHTML='';
+      list.sort((a,b)=> new Date(b.date)-new Date(a.date)).forEach(p=>{
+        root.appendChild(el(`
+        <article class="item" role="listitem">
+          <div class="muted" style="font-size:12px">${fmtDate(p.date)}</div>
+          <h4><a href="#post/${p.slug}">${p.title}</a></h4>
+          <div class="muted">${(p.body.length>140?p.body.slice(0,140)+"…":p.body)}</div>
+          <div style="display:flex;gap:6px;margin-top:6px">${p.tags.map(t=>`<span class="pill">${t}</span>`).join('')}</div>
+        </article>`))
+      })
+    }
+    function renderPost(slug){
+      const p = SITE.posts.find(x=>x.slug===slug); if(!p) return;
+      const results = document.getElementById('results'); results.innerHTML='';
+      const quick = document.getElementById('quickActions'); quick.scrollIntoView({behavior:'smooth'});
+      results.appendChild(el(`
+        <article class="item">
+          <div class="muted" style="font-size:12px">${fmtDate(p.date)}</div>
+          <h4>${p.title}</h4>
+          <p>${p.body}</p>
+          <a class="pill" href="#blog">Back to notes</a>
+        </article>
+      `))
+    }
+
+    // Search
+    const q = document.getElementById('q'); const results = document.getElementById('results');
+    function queryAll(text){
+      const term = text.toLowerCase().trim(); if(!term){results.innerHTML=''; return}
+      const inP = SITE.projects.map(x=>({type:'Project', title:x.title, date:x.date, url:x.url, desc:x.desc}))
+      const inB = SITE.posts.map(x=>({type:'Note', title:x.title, date:x.date, url:'#post/'+x.slug, desc:x.body}))
+      const pool = inP.concat(inB);
+      const found = pool.filter(x => (x.title+" "+x.desc).toLowerCase().includes(term)).sort((a,b)=> new Date(b.date)-new Date(a.date))
+      results.innerHTML='';
+      if(found.length===0){results.appendChild(el(`<div class="muted">No matches</div>`)); return}
+      found.forEach(x=>results.appendChild(el(`
+        <a class="item" href="${x.url}">
+          <div class="muted" style="font-size:12px">${x.type} • ${fmtDate(x.date)}</div>
+          <h4>${x.title}</h4>
+          <div class="muted">${x.desc.length>160?x.desc.slice(0,160)+"…":x.desc}</div>
+        </a>`)))
+    }
+    q.addEventListener('input', e=>queryAll(e.target.value));
+    window.addEventListener('keydown', e=>{if(e.key==='/'){e.preventDefault();q.focus()}})
+
+    // GitHub repos
+    async function loadRepos(user){
+      const root = document.getElementById('repos'); root.innerHTML='<div class="muted">Loading…</div>'
+      try{
+        const r = await fetch(`https://api.github.com/users/${user}/repos?sort=updated&per_page=6`);
+        if(!r.ok) throw new Error('rate limited');
+        const data = await r.json();
+        root.innerHTML='';
+        data.slice(0,6).forEach(repo=>{
+          root.appendChild(el(`
+            <a class="item" href="${repo.html_url}" target="_blank" rel="noreferrer">
+              <div class="muted" style="font-size:12px">Updated ${new Date(repo.updated_at).toLocaleDateString()}</div>
+              <h4>${repo.name}</h4>
+              <div class="muted">${repo.description||'No description'}</div>
+            </a>
+          `))
+        })
+      }catch(e){
+        root.innerHTML = '';
+        root.appendChild(el(`<div class="item">Unable to pull repos. You can set them manually inside the config.</div>`))
+      }
+    }
+
+    // Init
+    renderProjects(SITE.projects);
+    renderPosts(SITE.posts);
+    loadRepos(SITE.githubUser);
+  </script>
+</body>
+</html>
